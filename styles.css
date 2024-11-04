@@ -1,39 +1,201 @@
+/* ------------------- CSS by Aanvi R ---------------------------------------- */
 /* ------------------- IMPORTED FONTS ---------------------------------------- */
-
-/*-------------------- CSS RESET -----------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap');
+/*-------------------- CSS RESET --------------------------------------------- */
 /* ------------------- ROOT VARIABLES ---------------------------------------- */
 
-:root{
+:root {
     --green: #06A816;
     --orange: #E75D02;
     --black: #000000;
     --white: #ffffff;
+    --trans-black: rgb(0, 0, 0, 80%);
 
     --text-font: "Habibi", Times, serif;
     --heading-font: "Irish Grover", Arial, sans-serif;
 }
-/* ------------------- GLOBAL STYLES (mobile first/small) ---------------------*/
-
+/* ------------------- GLOBAL STYLES (mobile first/small) -------------------- */
 h1, h2, h3{
     font-family: var(--heading-font);
 }
-
 h1{
     font-size: 2.5em;
+    margin: 0.25em;
+    text-shadow: var(--black) 2px 2px 2px;
 }
-
 h2{
     font-size: 1.75em;
 }
-
 h3, p{
     font-size: 1.25em;
 }
-
 p{
     font-family: var(--text-font);
 }
-
+body{
+    margin: 0;
+}
+header{
+    background-color: var(--green);
+    color: var(--white);
+    display: grid;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+header p{
+    font-style: italic;
+    margin-top: 0;
+}
+nav{
+    margin: 1em 1em 0;
+}
+ul{
+    list-style: none;
+    display: grid;
+    margin: 0;
+    justify-content: center;
+    justify-items: center;
+    padding: 0;
+}
+a{
+    display: block;
+    text-decoration: none;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 0.5em 1em;
+    width: 200px;
+    border: var(--white) solid 1px;
+    border-radius: 5px;
+}
+a:hover{
+    color: var(--black);
+}
+#top-button{
+    position: fixed;
+    z-index: 1;
+    right: 0.5em;
+    bottom: 0.5em;
+    width: 30px;
+}
+main{
+    margin: 0 1em 1em 1em;
+}
+figure{
+    height: 300px;
+}
+figure p{
+    display: block;
+    background-color: var(--trans-black);
+    color: var(--white);
+    padding: 0.5em;
+    margin: 0;
+    width: 120px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    left: 80px;
+    bottom: 175px;
+}
+footer{
+    background-color: var(--green);
+    display: grid;
+    text-align: center;
+    color: var(--white);
+}
+footer div{
+    background-color: var(--white);
+    color: var(--green);
+    padding: 1em;
+}
+footer h2{
+    margin-bottom: 0.5em;
+}
+@media screen and (min-width: 428px){
+    ul{
+        display: grid;
+        grid-template-rows: 1fr 1fr 0;
+    }
+    li{
+        margin: 0.5em;
+        text-align: center;
+    }
+    section.sale-items{
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+    }
+}
 /*-------------------- MEDIA QUERY (medium) -----------------------------------*/
+@media screen and (min-width: 834px){
+    header{
+        grid-template-columns: 1fr 1fr;
+    }
+    header p{
+        margin: auto;
+    }
+    nav ul{
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+    a{
+        text-align: center;
+    }
+    section.sale-items{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    section.sale-items h3{
+        grid-column: 1/-1;
+        text-align: center;
+    }
+    footer{
+        grid-template-columns: 1fr 1fr;
+    }
+    footer div{
+        grid-column: 1/-1;
+    }
+}
 /*-------------------- MEDIA QUERY (large) ------------------------------------*/
+@media screen and (min-width: 1280px){
+    header{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+    header p{
+        grid-row: 2/3;
+    }
+    nav ul{
+        position: absolute;
+        top: 3em;
+        right: 5em;
+    }
+    section.sale-items{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    footer{
+        grid-template-columns: 100px 1fr 1fr 100px;
+    }
+    #contact{
+        grid-column: 2/3;
+        display: grid;
+        grid-template-columns: 100px 200px;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+    #hours{
+        grid-column: 3/4;
+        display: grid;
+        grid-template-columns: 100px 350px;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+}
 /*-------------------- MEDIA QUERY (xl) ---------------------------------------*/
+@media screen and (min-width: 1440px){
+    section.sale-items{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
